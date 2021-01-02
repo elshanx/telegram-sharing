@@ -1,0 +1,32 @@
+$primary: #49b6ffff;
+$secondary: #779be7ff;
+$tertiary: #f9f5fcff;
+$fourth: #9f5ec4ff;
+$fifth: #a480cfff;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+ul,
+a {
+  color: #ffffffe0;
+}
+
+body {
+  width: 85%;
+  margin: 0 auto;
+  background: #313030;
+  color: #ffffffe0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

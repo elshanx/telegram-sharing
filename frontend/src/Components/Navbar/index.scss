@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: inherit;
+
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
+  & ul a:not(last-child) {
+    margin-right: 2rem;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  & .buttons > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+}

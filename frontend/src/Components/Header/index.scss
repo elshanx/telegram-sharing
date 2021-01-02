@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.header h1 span {
+  color: rgb(111, 72, 240);
+  font-size: larger;
+}
+
+.vector-container {
+  flex: 1;
+}
+
+.TBD {
+  flex: 1;
+}
+
+.TBD > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.btn-container button {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
