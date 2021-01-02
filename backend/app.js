@@ -4,10 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
+require('dotenv').config()
 
-
-const mongoose = require("mongoose");
-const url = 'mongodb://127.0.0.1:27017/test'
+const url = `mongodb+srv://admin:${process.env.DB_PASS}@cluster0.3qfrd.mongodb.net/Api?retryWrites=true&w=majority`
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 db.once('open', _ => {
