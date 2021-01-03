@@ -4,16 +4,17 @@ var router = express.Router();
 var groups=require('../models/groups')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
   //await groups.findByIdAndUpdate()
   var newgroup=new groups({
-    name: "Test",
-    id: "Test",
-    picturepath: "Test",
-    description:"Test",
-    link: true
+    name: req.body.name,
+    id: req.body.id,
+    picturepath: req.body.path,
+    description:req.body.description,
+    link: req.body.link
   })
   newgroup.save()
+console.log(req.body);
   res.send("ok")
 });
 
