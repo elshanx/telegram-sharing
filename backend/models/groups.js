@@ -6,7 +6,8 @@ var groupsSchema = new Schema({
     id: String,
     picturepath: String,
     description: String,
-    link: String
+    link: String,
+    isfront:Boolean
 });
 
 let groups = mongoose.model('groups', groupsSchema)

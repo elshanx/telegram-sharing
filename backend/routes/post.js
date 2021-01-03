@@ -11,7 +11,9 @@ router.post('/', function(req, res, next) {
     id: req.body.id,
     picturepath: req.body.path,
     description:req.body.description,
-    link: req.body.link
+    link: req.body.link,
+    isfront:req.body.front
+    
   })
   newgroup.save()
 console.log(req.body);
