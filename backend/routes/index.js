@@ -7,7 +7,7 @@ var groups=require('../models/groups')
 router.get('/', async function(req, res, next) {
   var results =await groups.find({isfront:true})
   console.log(results);
-  res.send("ok")
+  res.json(results)
 });
 
 module.exports = router;
