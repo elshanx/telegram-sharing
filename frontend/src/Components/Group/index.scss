@@ -1,3 +1,19 @@
+$gradient_border_color: linear-gradient(
+  150deg,
+  #d16ba5,
+  #c777b9,
+  #ba83ca,
+  #aa8fd8,
+  #9a9ae1,
+  #8aa7ec,
+  #79b3f4,
+  #69bff8,
+  #52cffe,
+  #41dfff,
+  #46eefa,
+  #5ffbf1
+);
+
 .groups {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5,17 +21,30 @@
 }
 
 .groups__card {
-  color: #000;
+  color: #333;
+  background: #fafafa;
   width: 500px;
   height: 200px;
-  background: #fafafa;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  min-height: 200px;
+  box-shadow: 4px 10px 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  border-left: 10px solid green;
-  padding: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    width: 10px;
+    background: $gradient_border_color;
+  }
 }
 
 .card__typography {
@@ -32,6 +61,7 @@
 
 .logo__container {
   border: 5px solid gold;
+  // change this to gradient
   border-radius: 50%;
   overflow: hidden;
   & img {
