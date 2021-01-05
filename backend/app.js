@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
+var cors=require("cors")
 require('dotenv').config()
 
 const url = `mongodb+srv://admin:${process.env.DB_PASS}@cluster0.3qfrd.mongodb.net/Api?retryWrites=true&w=majority`
@@ -32,6 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors)
 
 app.use('/', indexRouter);
 app.use('/post', postRouter);
