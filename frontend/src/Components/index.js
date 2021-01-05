@@ -1,4 +1,5 @@
 export * from './Header';
 export * from './Navbar';
-export * from './TaskList';
-export * from './Task';
+export * from './GroupList';
+export * from './Group';
+export * from './Sponsors';

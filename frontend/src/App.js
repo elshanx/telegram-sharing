@@ -1,11 +1,17 @@
-import { Navbar, Header, TaskList } from './Components';
+import {
+  Navbar,
+  Header,
+  GroupList,
+  // Sponsors
+} from './Components';
 
 function App() {
   return (
     <>
       <Navbar />
       <Header />
-      <TaskList />
+      {/* <Sponsors /> */}
+      <GroupList />
     </>
   );
 }

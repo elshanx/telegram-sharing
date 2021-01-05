@@ -4,11 +4,13 @@
   align-items: center;
   width: 80%;
   margin: 3rem auto;
+  background: no-repeat 50% center / contain url('./blob.svg');
 }
 
 .header h1 span {
   color: rgb(111, 72, 240);
   font-size: larger;
+  font-weight: bold;
 }
 
 .vector-container {
