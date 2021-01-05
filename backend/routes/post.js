@@ -1,23 +1,22 @@
-var express = require('express');
-const mongoose = require("mongoose");
-var router = express.Router();
-var groups=require('../models/groups')
+const express = require('express');
+const mongoose = require('mongoose');
+const router = express.Router();
+const groups = require('../models/groups');
 
 /* GET home page. */
-router.post('/', function(req, res, next) {
+router.post('/', function (req, res, next) {
   //await groups.findByIdAndUpdate()
-  var newgroup=new groups({
+  const newgroup = new groups({
     name: req.body.name,
     id: req.body.id,
     picturepath: req.body.path,
-    description:req.body.description,
+    description: req.body.description,
     link: req.body.link,
-    isfront:req.body.front
-    
-  })
-  newgroup.save()
-console.log(req.body);
-  res.send("ok")
+    isfront: req.body.front,
+  });
+  newgroup.save();
+  console.log(req.body);
+  res.send('ok');
 });
 
 module.exports = router;

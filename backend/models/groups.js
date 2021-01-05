@@ -1,15 +1,15 @@
-const mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var groupsSchema = new Schema({
-    name: String,
-    id: String,
-    picturepath: String,
-    description: String,
-    link: String,
-    isfront:Boolean
+const groupsSchema = new Schema({
+  name: String,
+  id: String,
+  picturepath: String,
+  description: String,
+  link: String,
+  isfront: Boolean,
 });
 
-let groups = mongoose.model('groups', groupsSchema)
+let groups = mongoose.model('groups', groupsSchema);
 
-module.exports = groups
+module.exports = groups;
