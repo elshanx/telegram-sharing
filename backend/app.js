@@ -6,6 +6,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const passport = require("passport");
+
 
 const url = `mongodb+srv://admin:${process.env.DB_PASS}@cluster0.3qfrd.mongodb.net/Api?retryWrites=true&w=majority`;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -21,6 +23,7 @@ db.on('error', err => {
 
 const indexRouter = require('./routes/index');
 const postRouter = require('./routes/post');
+const usersRouter = require("./routes/users");
 
 const app = express();
 
@@ -36,6 +39,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use('/', indexRouter);
 app.use('/post', postRouter);
+app.use("/api/users", usersRouter);
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+// Routes
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
