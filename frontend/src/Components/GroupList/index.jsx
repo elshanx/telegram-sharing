@@ -7,7 +7,7 @@ export const GroupList = () => {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => (async () => setGroups(await fetchGroups()))(), []);
-  // console.log(groups);
+
   const group = groups?.map(g => <Group key={g.id} {...g} />);
 
   return (

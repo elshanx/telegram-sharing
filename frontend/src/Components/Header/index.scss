@@ -27,7 +27,16 @@
   }
 }
 
-.btn-container button {
-  padding: 1rem 2rem;
-  border-radius: 8px;
+.btn-container {
+  & button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: 0.2s ease-in;
+    font-weight: 500;
+    border: none;
+
+    &:hover {
+      background: rgb(111, 72, 240);
+    }
+  }
 }

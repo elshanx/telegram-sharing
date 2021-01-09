@@ -15,9 +15,10 @@ $gradient_border_color: linear-gradient(
 );
 
 .groups {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .groups__card {
@@ -34,6 +35,8 @@ $gradient_border_color: linear-gradient(
   align-items: center;
   overflow: hidden;
   position: relative;
+  padding: 6rem 0;
+  margin-bottom: 2rem;
 
   &::before {
     content: '';

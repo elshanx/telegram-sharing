@@ -11,21 +11,18 @@ $gradient_primary: linear-gradient(
   #f7c987 100%
 );
 
-.grouplist {
-  padding: 3rem 0;
-}
-
 .grouplist__title {
   color: #fff;
   background: $gradient_primary;
   margin: 0 auto 5rem;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: sans-serif;
   background-clip: text;
   width: max-content;
   color: transparent;
   background-size: 200% 200%;
-  animation: gradient 10s linear infinite alternate;
+  // animation: gradient 10s linear infinite alternate;
+  // TODO: add back
   position: relative;
 
   &::after {
