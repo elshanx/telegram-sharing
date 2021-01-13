@@ -3,13 +3,10 @@ import { Link, Route } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import './index.scss';
-import { useAuth } from '../../Providers/authContext';
 
-export const Navbar = () => {
+const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const { currentUser } = useAuth();
   const toggle = () => setDropdownOpen(prevState => !prevState);
-  console.log(currentUser);
 
   return (
     <>
@@ -22,10 +19,10 @@ export const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to='About'>About us</Link>
+              <Link to='about'>About us</Link>
             </li>
             <li>
-              <Link to='Contact'>Contact us</Link>
+              <Link to='contact'>Contact us</Link>
             </li>
             <Dropdown isOpen={dropdownOpen} toggle={toggle}>
               <DropdownToggle caret>Categories</DropdownToggle>
@@ -47,28 +44,25 @@ export const Navbar = () => {
                 Add your telegram group
               </Button>
             </Link> */}
-            <Link to='/New/Group'>
+            <Link to='/new/group'>
               <Button variant='contained' color='primary'>
                 Add new
               </Button>
             </Link>
-            {currentUser ? (
-              currentUser.email
-            ) : (
-              <>
-                <Link to='Login'>
-                  <Button variant='contained' color='primary'>
-                    Login
-                  </Button>
-                </Link>
-                <Link to='Register'>
-                  <Button variant='contained'>Register</Button>
-                </Link>
-              </>
-            )}
+
+            <Link to='login'>
+              <Button variant='contained' color='primary'>
+                Login
+              </Button>
+            </Link>
+            <Link to='register'>
+              <Button variant='contained'>Register</Button>
+            </Link>
           </ul>
         </nav>
       </Route>
     </>
   );
 };
+
+export default Navbar;

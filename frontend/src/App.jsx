@@ -1,21 +1,23 @@
 import { Route, Switch } from 'react-router-dom';
-
-import { Home, About, Auth, Contact } from './Pages';
-
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Auth from './Pages/Auth';
+import Register from './Components/Register/Register';
 import { AuthProvider } from './Providers/authContext';
 
-function App() {
+const App = () => {
   return (
     <AuthProvider>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/About' component={About}></Route>
-        <Route exact path='/Contact' component={Contact}></Route>
-        <Route exact path='/Login' component={Auth}></Route>
-        <Route exact path='/Register' component={Auth}></Route>
+        <Route exact path='/about' component={About} />
+        <Route exact path='/contact' component={Contact} />
+        <Route exact path='/login' component={Auth} />
+        <Route exact path='/register' component={Register} />
       </Switch>
     </AuthProvider>
   );
-}
+};
 
 export default App;

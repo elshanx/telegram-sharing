@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
-export const Sponsors = () => {
+const Sponsors = () => {
   return (
     <div className='blog-post'>
       <div className='blog-posts__img'>
@@ -17,10 +18,12 @@ export const Sponsors = () => {
           ut quisquam quasi eligendi suscipit porro corporis perspiciatis dolorum
           nobis sed in nulla maxime nemo quo, impedit ab deserunt similique.
         </p>
-        <a href='#' className='blog-post__cta'>
+        <Link to='' className='blog-post__cta'>
           read more
-        </a>
+        </Link>
       </div>
     </div>
   );
 };
+
+export default Sponsors;

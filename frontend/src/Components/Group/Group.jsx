@@ -1,6 +1,6 @@
 import './index.scss';
 
-export const Group = () => {
+const Group = () => {
   return (
     <div className='groups__card'>
       <div className='card__typography'>
@@ -14,3 +14,5 @@ export const Group = () => {
     </div>
   );
 };
+
+export default Group;

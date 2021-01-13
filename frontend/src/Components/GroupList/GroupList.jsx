@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import './index.scss';
 import { fetchGroups } from '../../API';
-import { Group } from '../';
+import Group from '../Group/Group';
 
-export const GroupList = () => {
+const GroupList = () => {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => (async () => setGroups(await fetchGroups()))(), []);
@@ -19,3 +19,5 @@ export const GroupList = () => {
     </section>
   );
 };
+
+export default GroupList;

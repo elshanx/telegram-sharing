@@ -1,12 +1,14 @@
-import { Navbar, Header, GroupList } from '../Components';
+import Navbar from '../Components/Navbar/Navbar';
+import Header from '../Components/Header/Header';
+import GroupList from '../Components/GroupList/GroupList';
 
-export const Home = () => {
-  return (
-    <>
-      <Navbar />
-      <Header />
-      <GroupList />
-      {/* Footer */}
-    </>
-  );
-};
+const Home = () => (
+  <>
+    <Navbar />
+    <Header />
+    <GroupList />
+    {/* Footer */}
+  </>
+);
+
+export default Home;
