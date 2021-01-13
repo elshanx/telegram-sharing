@@ -34,6 +34,22 @@ $bg_gradient: linear-gradient(
   }
 }
 
+.to-login {
+  color: $primary;
+
+  font: {
+    size: 15px;
+    weight: 500;
+  }
+  & a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .register {
   width: 100vw;
   height: 100vh;

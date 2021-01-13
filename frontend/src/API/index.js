@@ -21,8 +21,8 @@ export const fetchGroups = async () => {
   }
 };
 
-export const logIn = a => {
-  console.log('logged');
+export const logIn = async () => {
+  console.log('logged in');
 };
 
 export const register = async (name, email, password, password2) => {
