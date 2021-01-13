@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Alert } from 'reactstrap';
 import { register } from '../../API';
 import { useAuth } from '../../Providers/authContext';
+import './index.scss';
+import backgroundVideo from './charles-parker.mp4';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -22,58 +24,57 @@ const Register = () => {
   };
 
   return (
-    <>
-      <Link to='/'>go back</Link>
-      <form onSubmit={onFormSubmit}>
-        {error && <Alert variant='danger'>{error}</Alert>}
-        <h2>please login</h2>
+    <section className='register'>
+      <Link className='back-btn' to='/'>
+        Home
+      </Link>
+      <div className='register-container'>
+        <div className='video-container'>
+          <video
+            className='video'
+            muted
+            // autoPlay
+            loop
+          >
+            <source type='video/mp4' src={backgroundVideo} />
+          </video>
+        </div>
 
-        <label>
-          name
-          <input
-            value={name}
-            onChange={e => setName(e.target.value)}
-            type='text'
-            placeholder='name*'
-          />
-        </label>
-
-        <label>
-          email
-          <input
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            type='text'
-            placeholder='email*'
-          />
-        </label>
-
-        <br />
-
-        <label>
-          password
-          <input
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            type='password'
-            placeholder='password*'
-          />
-        </label>
-
-        <label>
-          confirm your password
-          <input
-            value={confirmPassword}
-            onChange={e => setConfirmPassword(e.target.value)}
-            type='password'
-            placeholder='password*'
-          />
-        </label>
-
-        <br />
-        <button type='submit'>login</button>
-      </form>
-    </>
+        <div className='form-container'>
+          <form className='register-form' onSubmit={onFormSubmit}>
+            {error && <Alert variant='danger'>{error}</Alert>}
+            <h2 className='form-title'>Sign Up</h2>
+            <input
+              value={name}
+              onChange={e => setName(e.target.value)}
+              type='text'
+              placeholder='Your name'
+            />
+            <input
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              type='text'
+              placeholder='Your email'
+            />
+            <input
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              type='password'
+              placeholder='Create password'
+            />
+            <input
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
+              type='password'
+              placeholder='Confirm password'
+            />
+            <button className='reg-btn' type='submit'>
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
   );
 };
 

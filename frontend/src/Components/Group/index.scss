@@ -18,7 +18,8 @@ $gradient_border_color: linear-gradient(
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .groups__card {
@@ -64,7 +65,7 @@ $gradient_border_color: linear-gradient(
 
 .logo__container {
   border: 5px solid gold;
-  // change this to gradient
+  // TODO: change this to gradient
   border-radius: 50%;
   overflow: hidden;
   & img {

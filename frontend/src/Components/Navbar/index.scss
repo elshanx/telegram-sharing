@@ -1,8 +1,9 @@
 .navbar {
+  width: 85%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: inherit;
 
   & ul {
     display: flex;
@@ -13,7 +14,8 @@
   & ul a:not(last-child) {
     margin-right: 2rem;
   }
-  a {
+  a,
+  a:hover {
     text-decoration: none;
   }
 
