@@ -1,6 +1,6 @@
-import Navbar from '../Components/Navbar/Navbar';
-import Header from '../Components/Header/Header';
-import GroupList from '../Components/GroupList/GroupList';
+import Navbar from '../Components/Navbar';
+import Header from '../Components/Header';
+import GroupList from '../Components/GroupList';
 
 const Home = () => (
   <>

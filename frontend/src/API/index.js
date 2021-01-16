@@ -1,11 +1,10 @@
 import axios from 'axios';
 
 const endpoint = 'http://localhost:3000';
-// const loginEndpoint = 'http://localhost:3000/api/users/login';
-const registerEndpoint = 'http://localhost:3000/api/users/register';
+const authURL = 'http://localhost:3000/api/users/';
 
-// const defaults = axios.create({
-//   baseURL: 'http://localhost:3000',
+// const authAxios = axios.create({
+//   baseURL: authURL,
 //   headers: {
 //     'Content-Type': 'application/json',
 //     Authorization: `Bearer ${token}`,
@@ -28,7 +27,7 @@ export const logIn = async () => {
 export const register = async (name, email, password, password2) => {
   await axios({
     method: 'post',
-    url: registerEndpoint,
+    url: `${authURL}/register`,
     data: {
       name,
       email,
@@ -36,10 +35,10 @@ export const register = async (name, email, password, password2) => {
       password2,
     },
   })
-    .then(response => {
+    .then((response) => {
       console.log(JSON.stringify(response.data));
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 };

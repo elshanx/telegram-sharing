@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
-import './index.scss';
-import { fetchGroups } from '../../API';
-import Group from '../Group/Group';
+
+import '../Styles/Sass/GroupList.scss';
+import { fetchGroups } from '../API';
+import Group from './Group';
 
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
 
   useEffect(() => (async () => setGroups(await fetchGroups()))(), []);
 
-  const group = groups?.map(g => <Group key={g.id} {...g} />);
+  const group = groups?.map((g) => <Group key={g.id} {...g} />);
 
   return (
     <section className='grouplist'>

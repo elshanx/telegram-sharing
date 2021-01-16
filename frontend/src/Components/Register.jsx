@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { register } from '../../API';
-import { useAuth } from '../../Providers/authContext';
-import './index.scss';
-import backgroundVideo from './charles-parker.mp4';
+import '../Styles/Sass/Register.scss';
+import { register } from '../API';
+import { useAuth } from '../Providers/authContext';
+import backgroundVideo from '../Styles/assets/charles-parker.mp4';
 import { userSchema } from '../Validations/UserValidation';
 
 const Register = () => {
@@ -26,7 +26,7 @@ const Register = () => {
 
   const validateForm = async () => await userSchema.isValid(formData);
 
-  const registerUser = async e => {
+  const registerUser = async (e) => {
     e.preventDefault();
     const isValid = await validateForm();
     if (isValid) {
@@ -56,31 +56,31 @@ const Register = () => {
             <h2 className='form-title'>Sign Up</h2>
             <input
               value={firstName}
-              onChange={e => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
               type='text'
               placeholder='Your name'
             />
             <input
               value={lastName}
-              onChange={e => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
               type='text'
               placeholder='Your name'
             />
             <input
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               type='text'
               placeholder='Your email'
             />
             <input
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               type='password'
               placeholder='Create password'
             />
             <input
               value={confirmPassword}
-              onChange={e => setConfirmPassword(e.target.value)}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               type='password'
               placeholder='Confirm password'
             />
