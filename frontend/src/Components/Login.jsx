@@ -1,19 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { login } from '../../API';
-import { useAuth } from '../../Providers/authContext';
-import './index.scss';
-import backgroundVideo from '../Register/charles-parker.mp4';
-import { userSchema } from '../Validations/UserValidation';
+import '../Styles/Sass/Login.scss';
+import { login } from '../API';
+import backgroundVideo from '../Styles/assets/charles-parker.mp4';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { setCurrentUser } = useAuth();
 
-  const signIn = e => {
+  const signIn = (e) => {
     // stuff
   };
 
@@ -34,13 +31,13 @@ const Login = () => {
             <h2 className='form-title'>Sign Up</h2>
             <input
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               type='text'
               placeholder='Your email'
             />
             <input
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               type='password'
               placeholder='Create password'
             />

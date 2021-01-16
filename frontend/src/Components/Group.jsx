@@ -1,4 +1,4 @@
-import './index.scss';
+import '../Styles/Sass/Group.scss';
 
 const Group = () => {
   return (

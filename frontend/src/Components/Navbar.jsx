@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import './index.scss';
+
+import '../Styles/Sass/Navbar.scss';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen(prevState => !prevState);
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   return (
     <>

@@ -10,16 +10,12 @@
 }
 
 body {
+  box-sizing: border-box;
   background: #313030;
   color: #ffffffe0;
-  box-sizing: border-box;
   font-family: 'Montserrat';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 ul,
