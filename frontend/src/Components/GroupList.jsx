@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
+import Group from './Group';
+
+import { Heading } from '../Styles/Styled';
 import '../Styles/Sass/GroupList.scss';
 import { fetchGroups } from '../API';
-import Group from './Group';
 
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
@@ -13,9 +16,9 @@ const GroupList = () => {
 
   return (
     <section className='grouplist'>
-      <div>
-        <h2 className='grouplist__title'> Featured Channels, Groups, and Bots</h2>
-      </div>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <Heading header>Featured Channels, Groups, and Bots</Heading>
+      </motion.div>
       <div className='groups'>{groups && group}</div>
     </section>
   );
