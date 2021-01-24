@@ -6,7 +6,11 @@ import Dropdown from './Dropdown';
 import moon from '../Styles/assets/illustrations/moon.svg';
 import sun from '../Styles/assets/illustrations/sun.svg';
 
+import { useTheme } from '../Providers/DarkModeProvider';
+
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <StyledNavbar>
       <StyledUl links>
@@ -32,7 +36,7 @@ const Navbar = () => {
           <Button register>Register</Button>
         </Link>
         <StyledSvgContainer>
-          <img src={moon} alt='' />
+          <img onClick={() => toggleTheme()} src={moon} alt='' />
         </StyledSvgContainer>
       </StyledUl>
     </StyledNavbar>
