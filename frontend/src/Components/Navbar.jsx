@@ -11,6 +11,11 @@ import { useTheme } from '../Providers/DarkModeProvider';
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
+  const onToggleTheme = () => {
+    toggleTheme();
+    console.log(theme);
+  };
+
   return (
     <StyledNavbar>
       <StyledUl links>
@@ -36,7 +41,11 @@ const Navbar = () => {
           <Button register>Register</Button>
         </Link>
         <StyledSvgContainer>
-          <img onClick={() => toggleTheme()} src={moon} alt='' />
+          <img
+            onClick={onToggleTheme}
+            src={theme === 'dark' ? moon : sun}
+            alt=''
+          />
         </StyledSvgContainer>
       </StyledUl>
     </StyledNavbar>
