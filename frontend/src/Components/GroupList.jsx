@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import Group from './Group';
 
-import { Heading } from '../Styles/Styled';
+import { StyledHeading } from '../Styles/Styled';
 import '../Styles/Sass/GroupList.scss';
 import { fetchGroups } from '../API';
 
@@ -17,7 +17,9 @@ const GroupList = () => {
   return (
     <section className='grouplist'>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <Heading header>Featured Channels, Groups, and Bots</Heading>
+        <StyledHeading header>
+          Featured Channels, Groups, and Bots
+        </StyledHeading>
       </motion.div>
       <div className='groups'>{groups && group}</div>
     </section>

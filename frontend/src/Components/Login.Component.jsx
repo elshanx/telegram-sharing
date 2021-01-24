@@ -3,11 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 import {
-  Input,
-  Button,
+  StyledInput,
+  StyledButton,
   StyledLink,
-  Form,
-  Heading,
+  StyledForm,
+  StyledHeading,
 } from '../Styles/Styled';
 import bgImage from '../Styles/assets/signin.png';
 
@@ -33,40 +33,40 @@ const LoginComponent = () => {
   };
 
   return (
-    <Wrapper>
+    <StyledWrapper>
       <StyledLink>
         <Link to='/'>Home</Link>
       </StyledLink>
-      <Form onSubmit={signIn}>
-        <Heading>Log in</Heading>
-        <Input
+      <StyledForm onSubmit={signIn}>
+        <StyledHeading>Log in</StyledHeading>
+        <StyledInput
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type='text'
           aria-label='email input'
           placeholder='Your email*'
         />
-        <Input
+        <StyledInput
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type='password'
           aria-label='password input'
           placeholder='Your password*'
         />
-        <Button auth color='signin' type='submit'>
+        <StyledButton auth color='signin' type='submit'>
           Log in
           {/* TODO: on click change text and animate */}
-        </Button>
+        </StyledButton>
         <StyledLink size='small'>
           Don't have an account? <Link to='/register'>Sign up</Link>
         </StyledLink>
-      </Form>
+      </StyledForm>
       <img src={bgImage} alt='' />
-    </Wrapper>
+    </StyledWrapper>
   );
 };
 
-const Wrapper = styled.section`
+const StyledWrapper = styled.section`
   background: ${({ theme }) => theme.secondaryLight};
   overflow: hidden;
   padding: 2rem;

@@ -13,7 +13,6 @@ const Navbar = () => {
 
   const onToggleTheme = () => {
     toggleTheme();
-    console.log(theme);
   };
 
   return (

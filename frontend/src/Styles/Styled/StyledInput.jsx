@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Input = styled.input`
+export const StyledInput = styled.input`
   width: 250px;
   padding: 5px 10px;
   margin: 5px;

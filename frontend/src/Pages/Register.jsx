@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import {
-  Button,
-  Input,
-  Heading,
+  StyledButton,
+  StyledInput,
+  StyledHeading,
   StyledLink,
-  Form,
+  StyledForm,
 } from '../Styles/Styled';
 import backgroundVideo from '../Styles/assets/charles-parker.mp4';
 
@@ -43,14 +43,13 @@ const Register = () => {
   };
 
   return (
-    <>
-      <StyledLink>
-        <Link className='back-btn' to='/'>
-          Home
-        </Link>
-      </StyledLink>
-      <>
-        <div className='video-container'>
+    <StyledSection>
+      <StyledRegisterContainer>
+        <StyledLink>
+          <Link to='/'>Home</Link>
+        </StyledLink>
+
+        <StyledVideoContainer>
           <video
             width='600'
             height='600'
@@ -59,56 +58,63 @@ const Register = () => {
           >
             <source type='video/mp4' src={backgroundVideo} />
           </video>
-        </div>
+        </StyledVideoContainer>
 
-        <>
-          <Form className='register-form' onSubmit={registerUser}>
-            <Heading>Sign Up</Heading>
-            <Input
+        <StyledFormContainer>
+          <StyledForm className='register-form' onSubmit={registerUser}>
+            <StyledHeading>Sign Up</StyledHeading>
+            <StyledInput
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               type='text'
               placeholder='Your name'
             />
-            <Input
+            <StyledInput
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               type='text'
               placeholder='Your name'
             />
-            <Input
+            <StyledInput
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type='text'
               placeholder='Your email'
             />
-            <Input
+            <StyledInput
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type='password'
               placeholder='Create password'
             />
-            <Input
+            <StyledInput
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               type='password'
               placeholder='Confirm password'
             />
-            <Button auth type='submit'>
+            <StyledButton auth type='submit'>
               Register
-            </Button>
-            <p className='to-login'>
-              Already have an account? <Link to='/login'>Log in</Link>
-            </p>
-          </Form>
-        </>
-      </>
-    </>
+            </StyledButton>
+            <StyledLink size='small'>
+              Already have an account?
+              <Link to='/login'> Log in</Link>
+            </StyledLink>
+          </StyledForm>
+        </StyledFormContainer>
+      </StyledRegisterContainer>
+    </StyledSection>
   );
 };
 
-const StyledRegister = styled.section`
-  background: linear-gradient(
+const StyledSection = styled.section`
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background: linear-gradient(
     -45deg,
     #3f51b1 0%,
     #5a55ae 13%,
@@ -119,33 +125,38 @@ const StyledRegister = styled.section`
     #f18271 75%,
     #f3a469 87%,
     #f7c987 100%
-  );
+  ); */
 `;
 
 const StyledRegisterContainer = styled.div`
-  .register-container {
-    display: flex;
-    border-radius: 10px;
+  width: 85%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  overflow: hidden;
+  width: max-content;
+  height: 60%;
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 100px 80px rgba(0, 0, 0, 0.07);
+
+  & .form-title {
+    margin-bottom: 1rem;
+  }
+`;
+
+const StyledVideoContainer = styled.div`
+  &.video-container {
     overflow: hidden;
-    width: max-content;
-    height: 60%;
-    box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.042),
-      0 100px 80px rgba(0, 0, 0, 0.07);
+  }
 
-    &.video-container {
-      overflow: hidden;
-    }
-
-    & .video {
-      width: 300px;
-      height: 100%;
-      object-fit: fill;
-    }
-
-    & .form-title {
-      margin-bottom: 1rem;
-    }
+  & .video {
+    width: 300px;
+    height: 100%;
+    object-fit: fill;
   }
 `;
 
@@ -211,7 +222,7 @@ const StyledBackBtn = styled.button`
 
   &:hover {
     text-decoration: none;
-    color: $primary;
+    color: red;
   }
 `;
 

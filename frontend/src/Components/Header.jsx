@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { Button } from '../Styles/Styled';
+import { StyledButton } from '../Styles/Styled';
 import bgSvg from '../Styles/assets/illustrations/vector.svg';
 
 const Header = () => {
@@ -27,9 +27,9 @@ const Header = () => {
         <h4>
           #1 Directory of The Best Telegram Channels, Groups, and Bots.
         </h4>
-        <Button header type='button'>
+        <StyledButton header type='button'>
           top 100 media
-        </Button>
+        </StyledButton>
       </StyledTypography>
     </StyledHeader>
   );
