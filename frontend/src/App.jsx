@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import { useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -9,7 +9,6 @@ import Register from './Pages/Register';
 import ErrorPage from './Pages/404';
 
 import GlobalStyles from './Styles/Styled/GlobalStyles';
-import { ThemeProvider } from 'styled-components';
 
 import AuthProvider from './Providers/AuthContext';
 import DarkModeProvider from './Providers/DarkModeProvider';
@@ -25,10 +24,6 @@ const App = () => {
     secondaryDark: '#6a26cd',
     secondaryLight: '#37b9f1',
   };
-
-  useEffect(() => {
-    // console.log(mode);
-  }, [mode]);
 
   return (
     <ThemeProvider theme={theme}>

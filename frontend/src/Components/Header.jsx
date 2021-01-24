@@ -44,6 +44,14 @@ const StyledHeader = styled(motion.div)`
     url('../assets/illustrations/blob.svg');
 `;
 
+const StyledTypography = styled(motion.div)`
+  flex: 1;
+
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+`;
+
 const StyledHeading = styled.h1`
   & h1 {
     & span {
@@ -51,14 +59,6 @@ const StyledHeading = styled.h1`
       font-size: larger;
       font-weight: bold;
     }
-  }
-`;
-
-const StyledTypography = styled(motion.div)`
-  flex: 1;
-
-  & > *:not(:last-child) {
-    margin-bottom: 1rem;
   }
 `;
 

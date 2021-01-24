@@ -1,32 +1,39 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import Dropdown from './Dropdown';
+
+import moon from '../Styles/assets/illustrations/moon.svg';
+import sun from '../Styles/assets/illustrations/sun.svg';
+
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <StyledUl>
-        <Link to='/'>
-          <p>Home</p>
-        </Link>
+      <StyledUl links>
+        <p>
+          <Link to='/'>Home</Link>
+        </p>
         <li>
           <Link to='about'>About us</Link>
         </li>
         <li>
           <Link to='contact'>Contact us</Link>
         </li>
-        <div>dropdown</div>
+        <Dropdown title='Categories' />
       </StyledUl>
-      <StyledUl className='buttons'>
+      <StyledUl>
         <Link to='/new/group'>
           <Button>Add new</Button>
         </Link>
-
         <Link to='login'>
           <Button login>Login</Button>
         </Link>
         <Link to='register'>
           <Button register>Register</Button>
         </Link>
+        <StyledSvgContainer>
+          <img src={moon} alt='' />
+        </StyledSvgContainer>
       </StyledUl>
     </StyledNavbar>
   );
@@ -48,6 +55,19 @@ const StyledUl = styled.ul`
 
   & a:not(last-child) {
     margin-right: 1rem;
+
+    ${({ links }) =>
+      links &&
+      `
+    &:hover {
+      background: rgb(51, 51, 51, 0.5);
+    }
+    
+    padding: 0.5rem;
+    background: #333;
+    border-radius: 5px;
+
+    `};
   }
 `;
 
@@ -87,6 +107,29 @@ const Button = styled.button`
 
   &:active {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19);
+  }
+`;
+
+const StyledSvgContainer = styled.div`
+  background: #333;
+  padding: 0.4rem 0;
+  text-align: center;
+  height: 42px;
+  width: 50px;
+  margin: auto;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+
+  img {
+    width: 24px;
+    margin: 0 auto;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: rgb(51, 51, 51, 0.5);
   }
 `;
 
