@@ -35,7 +35,7 @@ const Header = () => {
   );
 };
 
-const StyledHeader = styled(motion.div)`
+const StyledHeader = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -5,4 +5,5 @@ export const StyledLink = styled.p`
   font-weight: 500;
   font-size: ${({ size }) => (size === 'small' ? '0.6rem' : '1rem')};
   opacity: ${({ size }) => (size === 'small' ? 0.6 : 1)};
+  margin-bottom: 1rem;
 `;
