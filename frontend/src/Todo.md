@@ -4,6 +4,6 @@
 - [ ] show input error if any
 - [ ] user profile
 - [ ] user dropdown
-- [ ] toggle dark theme changes UI colors
+- [x] toggle dark theme changes UI colors
 - [ ] settings page
 - [ ] groups should have some kind of ratings/likes

@@ -1,15 +1,13 @@
-import '../Styles/Sass/Group.scss';
-
 const Group = () => {
   return (
-    <div className='groups__card'>
-      <div className='card__typography'>
-        <h3 className='card__title'>Lorem ipsum dolor sit amet</h3>
-        <span className='card__count'>participants count</span>
-        <span className='card__date'>date created</span>
+    <div className='flex justify-around items-center shadow dark:bg-light text-altdark font-medium rounded-sm overflow-hidden relative p-8 my-4'>
+      <div className='mr-8 rounded-full overflow-hidden border-r-4 border-yellow-300 shadow-lg'>
+        <img loading='lazy' src='https://picsum.photos/100/100' alt='' />
       </div>
-      <div className='logo__container'>
-        <img src='https://picsum.photos/100/100' alt='' />
+      <div>
+        <h3 className='w-48'>Lorem ipsum dolor sit amet</h3>
+        <span className='text-altdark opacity-70'>participants count</span>
+        <span className='text-altdark opacity-70'>date created</span>
       </div>
     </div>
   );

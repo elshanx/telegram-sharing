@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 
 const Home = () => (
   <div className='w-full dark:bg-primary bg-gray-400 dark:text-light'>
-    <div className='w-10/12 m-auto'>
+    <div className='container m-auto'>
       <Navbar />
       <Header />
       <GroupList />
