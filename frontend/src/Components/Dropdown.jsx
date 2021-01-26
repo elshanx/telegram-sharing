@@ -10,7 +10,7 @@ const Dropdown = ({ title }) => {
         <button
           onClick={() => setOpen(!open)}
           type='button'
-          className='flex justify-center w-full rounded-sm border-none shadow-sm py-1 px-4 bg-altdark transition-all hover:bg-mainhover font-medium text-white focus:outline-none outline-none'
+          className='flex justify-center w-full rounded-sm border-none shadow-sm py-2 px-4 bg-altdark transition-all hover:bg-mainhover font-medium text-white focus:outline-none outline-none'
           aria-haspopup='true'
           aria-expanded='true'
         >
@@ -67,7 +67,7 @@ const Dropdown = ({ title }) => {
             Some Group
           </Link>
           <Link
-            href='#'
+            to='#'
             className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-300'
             role='menuitem'
           >

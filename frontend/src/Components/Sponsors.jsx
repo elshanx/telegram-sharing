@@ -14,11 +14,12 @@ const Sponsors = () => {
         </div>
         <h1 className='blog-post__title'>lorem ipsum</h1>
         <p className='blog-post__tex'>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium enim
-          ut quisquam quasi eligendi suscipit porro corporis perspiciatis dolorum
-          nobis sed in nulla maxime nemo quo, impedit ab deserunt similique.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Laudantium enim ut quisquam quasi eligendi suscipit porro
+          corporis perspiciatis dolorum nobis sed in nulla maxime nemo quo,
+          impedit ab deserunt similique.
         </p>
-        <Link to='' className='blog-post__cta'>
+        <Link to='#' className='blog-post__cta'>
           read more
         </Link>
       </div>

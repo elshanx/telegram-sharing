@@ -4,11 +4,13 @@ import GroupList from '../Components/GroupList';
 import Footer from '../Components/Footer';
 
 const Home = () => (
-  <div className='bg-primary text-white w-10/12 m-auto'>
-    <Navbar />
-    <Header />
-    <GroupList />
-    <Footer />
+  <div className='w-full dark:bg-primary bg-gray-400 dark:text-light'>
+    <div className='w-10/12 m-auto'>
+      <Navbar />
+      <Header />
+      <GroupList />
+      <Footer />
+    </div>
   </div>
 );
 

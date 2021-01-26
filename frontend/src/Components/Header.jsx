@@ -11,7 +11,7 @@ const Header = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
-      <div className='flex-1'>
+      <div className='flex-1 select-none pointer-events-none'>
         <img src={bgSvg} alt='vector' />
       </div>
       <motion.div
@@ -29,7 +29,7 @@ const Header = () => {
           <h1 className='sm:text-3xl md:text-5xl'>
             Telegramdaki ən
             <span className='text-yellow-500'> yaxşı </span>
-            kanallarını kəşf et!
+            kanalları kəşf et!
           </h1>
         </motion.div>
         <h4 className='my-6 w-2/3'>
