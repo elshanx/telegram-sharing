@@ -67,14 +67,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='container mx-auto px-6'>
+      <div className='w-full mx-auto px-6'>
         <div className='mt-16 border-t-2 flex flex-col items-center'>
           <div className='sm:w-2/3 text-center py-6'>
             <p className='text-sm font-bold mb-2'>
               © {new Date().getFullYear()} by{' '}
               <a
                 target='_blank'
-                rel='noreferrer'
+                rel='noreferrer noopener'
                 href='https://www.linkedin.com/in/elshanx/'
               >
                 <span className='transition-all hover:text-altprimary'>
