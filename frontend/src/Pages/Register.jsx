@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
 import backgroundVideo from '../Styles/assets/charles-parker.mp4';
 
@@ -121,21 +120,5 @@ const Register = () => {
     </div>
   );
 };
-
-const StyledRegisterContainer = styled.div`
-  border: none;
-  outline: none;
-  width: 85%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  overflow: hidden;
-  width: max-content;
-  height: 60%;
-  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 100px 80px rgba(0, 0, 0, 0.07);
-`;
 
 export default Register;
