@@ -2,13 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import {
-  StyledButton,
-  StyledInput,
-  StyledHeading,
-  StyledForm,
-  StyledLink as StyledToLogin,
-} from '../Styles/Styled';
 import backgroundVideo from '../Styles/assets/charles-parker.mp4';
 
 import { register } from '../API';
@@ -39,91 +32,95 @@ const Register = () => {
       // TODO: display error
     }
   };
-
+  // bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-900
   return (
-    <StyledSection>
-      <StyledRegisterContainer>
-        <StyledLink>
-          <Link to='/'>Home</Link>
-        </StyledLink>
+    <div className='flex justify-center items-center min-h-screen h-64 bg-purple-800'>
+      <div className='flex items-center justify-center rounded shadow overflow-hidden h-3/5'>
+        <p className='absolute top-0 w-10/12 pt-6'>
+          <Link
+            className='py-1 px-2 dark:bg-gray-600 dark:text-white hover:bg-mainhover rounded-sm transition-all font-medium'
+            to='/'
+          >
+            Home
+          </Link>
+        </p>
 
-        <StyledVideoContainer>
-          <video muted autoPlay loop>
+        <div className='h-full'>
+          <video
+            className='max-w-screen-sm w-64 max-h-full object-fill'
+            // muted autoPlay loop
+          >
             <source type='video/mp4' src={backgroundVideo} />
           </video>
-        </StyledVideoContainer>
+        </div>
 
-        <StyledFormContainer>
-          <StyledForm onSubmit={registerUser}>
-            <StyledHeading>Sign Up</StyledHeading>
-            <StyledInput
+        <div className='p-8 dark:bg-altdark h-full bg-red-400'>
+          <form
+            className='flex flex-col justify-center items-center h-full'
+            onSubmit={registerUser}
+          >
+            <h2 className='text-shadow my-4 text-3xl'>Sign Up</h2>
+            <input
+              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
               name='firstName'
               onChange={onInputChange}
               value={formData.firstName}
               type='text'
               placeholder='First name'
             />
-            <StyledInput
+            <input
+              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
               name='lastName'
               onChange={onInputChange}
               value={formData.lastName}
               type='text'
               placeholder='Last name'
             />
-            <StyledInput
+            <input
+              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
               name='email'
               onChange={onInputChange}
               value={formData.email}
               type='text'
               placeholder='Your email'
             />
-            <StyledInput
+            <input
+              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
               name='password'
               onChange={onInputChange}
               value={formData.password}
               type='password'
               placeholder='Create password'
             />
-            <StyledInput
+            <input
+              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
               name='password2'
               onChange={onInputChange}
               value={formData.password2}
               type='password'
               placeholder='Confirm password'
             />
-            <StyledButton auth type='submit'>
+            <button
+              className='shadow mt-4 mb-4 py-1 rounded-sm transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border-none text-white hover:bg-altdark hover:text-white font-medium ring-1 ring-white md:ring-white w-40'
+              type='submit'
+            >
               Register
-            </StyledButton>
-            <StyledToLogin size='small'>
-              Already have an account? <Link to='/login'>Log in</Link>
-            </StyledToLogin>
-          </StyledForm>
-        </StyledFormContainer>
-      </StyledRegisterContainer>
-    </StyledSection>
+            </button>
+            <p className='text-xs dark:opacity-50 opacity-75'>
+              Already have an account?{' '}
+              <Link
+                className='hover:text-altprimary transition'
+                to='/login'
+              >
+                Log in
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
-
-const StyledSection = styled.section`
-  min-height: 100vh;
-  max-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: linear-gradient(
-    -45deg,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c987 100%
-  );
-`;
 
 const StyledRegisterContainer = styled.div`
   border: none;
@@ -139,44 +136,6 @@ const StyledRegisterContainer = styled.div`
   height: 60%;
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.028),
     0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 100px 80px rgba(0, 0, 0, 0.07);
-`;
-
-const StyledVideoContainer = styled.div`
-  height: 600px;
-
-  video {
-    height: 100%;
-    width: 300px;
-    object-fit: fill;
-  }
-`;
-
-const StyledFormContainer = styled.div`
-  padding: 2rem;
-  background: rgb(40, 43, 44);
-  width: 500px;
-  height: 600px;
-`;
-
-const StyledLink = styled.p`
-  color: ${({ theme }) => theme.primaryLight};
-  font-weight: 500;
-  font-size: ${({ size }) => (size === 'small' ? '0.6rem' : '1rem')};
-  opacity: ${({ size }) => (size === 'small' ? 0.6 : 1)};
-
-  position: absolute;
-  top: 2rem;
-  width: 85%;
-
-  & a {
-    background: rgba(51, 51, 51, 0.397);
-    padding: 0.5rem;
-    border-radius: 3px;
-
-    &:hover {
-      background: rgba(51, 51, 51, 0.137);
-    }
-  }
 `;
 
 export default Register;
