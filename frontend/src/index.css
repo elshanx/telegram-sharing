@@ -22,3 +22,7 @@ body {
   background-color: #1f1d1f;
   color: #eee;
 }
+
+.text-shadow {
+  text-shadow: 2px 2px #6a26cd;
+}
