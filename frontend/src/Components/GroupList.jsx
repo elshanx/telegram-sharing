@@ -18,9 +18,7 @@ const GroupList = () => {
         </h2>
       </motion.div>
       <div className='container flex flex-wrap justify-around'>
-        {groups?.map((g) => (
-          <Group key={g.id} {...g} />
-        ))}
+        {groups && groups?.map((g) => <Group key={g.id} {...g} />)}
       </div>
     </section>
   );
