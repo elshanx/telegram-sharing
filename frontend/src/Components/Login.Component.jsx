@@ -4,11 +4,13 @@ import { Link, useHistory } from 'react-router-dom';
 import bgImage from '../Styles/assets/signin.png';
 
 import { useAuth } from '../Providers/AuthContext';
+import Auth from '../Helpers/Auth';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { user, setUser, login } = useAuth();
+  const { user, setUser } = useAuth();
+  const { login } = Auth();
 
   const history = useHistory();
 

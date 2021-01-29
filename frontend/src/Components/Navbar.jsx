@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Dropdown from './Dropdown';
@@ -7,13 +8,12 @@ import sun from '../Styles/assets/illustrations/sun.svg';
 
 import { useTheme } from '../Providers/DarkModeProvider';
 
-import { useAuth } from '../Providers/AuthContext';
-import { useState } from 'react';
+import Auth from '../Helpers/Auth';
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
 
-  const { isLoggedIn, signout } = useAuth();
+  const { authenticated, logout } = Auth();
 
   const [open, setOpen] = useState(false);
 
@@ -43,7 +43,7 @@ const Navbar = () => {
         <p className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium shadow-sm'>
           <Link to='/new/group'>Add new</Link>
         </p>
-        {isLoggedIn() ? (
+        {authenticated ? (
           <>
             <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
               <button className='transition bg-altdark p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'>
@@ -107,7 +107,7 @@ const Navbar = () => {
                     to='/'
                     className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
                     role='menuitem'
-                    onClick={() => signout()}
+                    onClick={() => logout()}
                   >
                     Sign out
                   </Link>
