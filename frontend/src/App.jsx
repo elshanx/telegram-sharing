@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ErrorPage from './Pages/404';
 
+import ProtectedRoute from './Routes/ProtectedRoute';
 import AuthProvider from './Providers/AuthContext';
 import DarkModeProvider from './Providers/DarkModeProvider';
 import Dashboard from './Components/Dashboard';
@@ -21,7 +22,7 @@ const App = () => {
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
-          <Route exact path='/dashboard' component={Dashboard} />
+          <ProtectedRoute exact path='/dashboard' component={Dashboard} />
           <Route path='*' component={ErrorPage} />
         </Switch>
       </AuthProvider>
