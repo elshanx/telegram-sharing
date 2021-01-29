@@ -9,12 +9,9 @@ import ErrorPage from './Pages/404';
 
 import AuthProvider from './Providers/AuthContext';
 import DarkModeProvider from './Providers/DarkModeProvider';
-import { useTheme } from './Providers/DarkModeProvider';
 import Dashboard from './Components/Dashboard';
 
 const App = () => {
-  const mode = useTheme();
-
   return (
     <DarkModeProvider>
       <AuthProvider>

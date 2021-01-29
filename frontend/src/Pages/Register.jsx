@@ -1,31 +1,31 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import backgroundVideo from '../Styles/assets/charles-parker.mp4';
 
-import { register } from '../API';
 import { useAuth } from '../Providers/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
+    lastname: '',
     email: '',
     password: '',
     password2: '',
   });
-  const { setCurrentUser } = useAuth();
 
-  const onInputChange = (e) => {
+  const { register, user, setUser } = useAuth();
+  const history = useHistory();
+
+  const onInputChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      const data = await register(formData);
-      // setCurrentUser({ firstName });
-      console.log(data);
+      const { success, token } = await register(formData);
+      localStorage.setItem('token', token);
+      success && history.push('/dashboard');
     } catch (error) {
       console.log(error);
       // TODO: display error
@@ -53,7 +53,7 @@ const Register = () => {
           </video>
         </div>
 
-        <div className='p-8 dark:bg-altdark h-full bg-red-400'>
+        <div className='p-8 dark:bg-altdark h-full bg-gray-600'>
           <form
             className='flex flex-col justify-center items-center h-full'
             onSubmit={registerUser}
@@ -61,17 +61,17 @@ const Register = () => {
             <h2 className='text-shadow my-4 text-3xl'>Sign Up</h2>
             <input
               className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
-              name='firstName'
+              name='name'
               onChange={onInputChange}
-              value={formData.firstName}
+              value={formData.name}
               type='text'
               placeholder='First name'
             />
             <input
               className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
-              name='lastName'
+              name='lastname'
               onChange={onInputChange}
-              value={formData.lastName}
+              value={formData.lastname}
               type='text'
               placeholder='Last name'
             />
@@ -100,7 +100,7 @@ const Register = () => {
               placeholder='Confirm password'
             />
             <button
-              className='shadow mt-4 mb-4 py-1 rounded-sm transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border-none text-white hover:bg-altdark hover:text-white font-medium ring-1 ring-white md:ring-white w-40'
+              className='shadow mt-4 mb-4 py-1 rounded-sm transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border-none text-white hover:bg-altdark hover:text-white dark:hover:bg-altprimary font-medium ring-1 ring-white md:ring-white w-40'
               type='submit'
             >
               Register

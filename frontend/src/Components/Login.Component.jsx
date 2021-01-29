@@ -3,24 +3,23 @@ import { Link, useHistory } from 'react-router-dom';
 
 import bgImage from '../Styles/assets/signin.png';
 
-import { logIn } from '../API';
 import { useAuth } from '../Providers/AuthContext';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { currentUser: token, error } = useAuth();
+  const { user, setUser, login } = useAuth();
 
   const history = useHistory();
 
   const signIn = async (e) => {
     e.preventDefault();
     try {
-      const success = await logIn(email, password);
-      console.log(success);
-      success && history.push('/currentUser/:id');
+      const data = await login(email, password);
+      console.log({ data });
+      // success && history.push('/currentUser/:id');
     } catch (error) {
-      // set error(error)
+      console.error({ error });
     }
   };
 
