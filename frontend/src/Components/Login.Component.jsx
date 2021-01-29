@@ -17,7 +17,7 @@ const LoginComponent = () => {
     try {
       const { success, token } = await login(email, password);
       setUser({ token });
-      success && history.push('/dashboard');
+      success && history.push('/');
     } catch (error) {
       console.error({ error });
     }
