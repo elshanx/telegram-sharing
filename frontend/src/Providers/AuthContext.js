@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
 
   const signout = () => {
     if (user) {
-      deleteToken;
+      deleteToken();
       setUser(false);
     }
   };
