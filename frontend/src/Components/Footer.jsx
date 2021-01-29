@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className='text-white relative pt-1'>
@@ -9,19 +11,19 @@ const Footer = () => {
                 Footer header 1
               </span>
               <span className='my-2'>
-                <a href='#' className='text-md'>
+                <Link to='#' className='text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
               <span className='my-2'>
-                <a href='#' className='text-md'>
+                <Link to='#' className='text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
               <span className='my-2'>
-                <a href='#' className='text-md'>
+                <Link to='#' className='text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
             </div>
             <div className='flex flex-col'>
@@ -29,19 +31,19 @@ const Footer = () => {
                 Footer header 2
               </span>
               <span className='my-2'>
-                <a href='#' className='text-md'>
+                <Link to='#' className='text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
               <span className='my-2'>
-                <a href='#' className=' text-md'>
+                <Link to='#' className=' text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
               <span className='my-2'>
-                <a href='#' className='text-md'>
+                <Link to='#' className='text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
             </div>
             <div className='flex flex-col'>
@@ -49,19 +51,19 @@ const Footer = () => {
                 Footer header 3
               </span>
               <span className='my-2'>
-                <a href='#' className=' text-md'>
+                <Link to='#' className=' text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
               <span className='my-2'>
-                <a href='#' className=' text-md'>
+                <Link to='#' className=' text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
               <span className='my-2'>
-                <a href='#' className=' text-md'>
+                <Link to='#' className=' text-md'>
                   link 1
-                </a>
+                </Link>
               </span>
             </div>
           </div>
@@ -72,15 +74,15 @@ const Footer = () => {
           <div className='sm:w-2/3 text-center py-6'>
             <p className='text-sm font-bold mb-2'>
               © {new Date().getFullYear()} by{' '}
-              <a
+              <Link
                 target='_blank'
                 rel='noreferrer noopener'
-                href='https://www.linkedin.com/in/elshanx/'
+                to='https://www.linkedin.com/in/elshanx/'
               >
                 <span className='transition-all hover:text-altprimary'>
                   Elshan Akbarov
                 </span>
-              </a>
+              </Link>
             </p>
           </div>
         </div>
