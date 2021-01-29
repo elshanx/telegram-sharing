@@ -11,15 +11,11 @@ const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState({ token });
 
-  useEffect(() => {
-    console.log(token);
-  }, []);
+  // useEffect(() => console.log(token), []);
 
-  const setToken = (object = user) => {
-    localStorage.setItem('token', object.token);
-  };
+  const setToken = (token) => localStorage.setItem('token', token);
 
-  const deleteToken = (params) => localStorage.removeItem('token');
+  const deleteToken = () => localStorage.removeItem('token');
 
   const login = async (email, password) => {
     try {
@@ -27,7 +23,7 @@ const AuthProvider = ({ children }) => {
         email,
         password,
       });
-      setToken(data);
+      setToken(data.token);
       return data;
     } catch (err) {
       console.error(err);
@@ -49,7 +45,7 @@ const AuthProvider = ({ children }) => {
         password,
         password2,
       });
-      setToken(data);
+      setToken(data.token);
       return data;
     } catch (err) {
       console.error(err);
@@ -63,7 +59,9 @@ const AuthProvider = ({ children }) => {
     }
   };
 
-  const value = { user, setUser, login, register, signout };
+  const isLoggedIn = () => (user.token ? true : false);
+
+  const value = { user, setUser, login, register, signout, isLoggedIn };
 
   return (
     <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
