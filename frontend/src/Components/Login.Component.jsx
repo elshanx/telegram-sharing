@@ -15,9 +15,9 @@ const LoginComponent = () => {
   const signIn = async (e) => {
     e.preventDefault();
     try {
-      const data = await login(email, password);
-      console.log({ data });
-      // success && history.push('/currentUser/:id');
+      const { success, token } = await login(email, password);
+      setUser({ token });
+      success && history.push('/dashboard');
     } catch (error) {
       console.error({ error });
     }
