@@ -6,6 +6,10 @@
 # testing
 /coverage
 
+# next.js
+/.next/
+/out/
+
 # production
 /build
 
@@ -22,3 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 .vscode
+.vercel

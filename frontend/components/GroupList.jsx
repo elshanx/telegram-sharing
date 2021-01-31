@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 import Group from './Group';
 
-import { fetchGroups } from '../API';
+// import { fetchGroups } from '../API';
 
 const GroupList = () => {
   const [groups, setGroups] = useState([]);
 
-  useEffect(() => (async () => setGroups(await fetchGroups()))(), []);
+  // useEffect(() => (async () => setGroups(await fetchGroups()))(), []);
 
   return (
     <section>
@@ -23,5 +23,18 @@ const GroupList = () => {
     </section>
   );
 };
+
+export async function getServerSideProps() {
+  // import axios from 'axios';
+  // export const url = 'http://localhost:3000';
+  // export const fetchGroups = async () => {
+  //   try {
+  //     const { data: groups } = await axios.get(url);
+  //     return groups;
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+}
 
 export default GroupList;

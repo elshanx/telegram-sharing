@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Contact = () => (
   <div>
-    <Link to='/'>home</Link>
+    <Link to='/'>
+      <a>home</a>
+    </Link>
     <h2>Contact Us!</h2>
   </div>
 );

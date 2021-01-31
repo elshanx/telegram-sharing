@@ -1,16 +1,14 @@
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-import LoginComponent from '../Components/Login.Component';
-
-import bgImage from '../Styles/assets/loginBgImage.jpeg';
+import LoginComponent from '../components/Login.Component';
 
 const useStyles = makeStyles(() => ({
   root: {
     height: '100vh',
   },
   image: {
-    backgroundImage: `url(${bgImage})`,
+    backgroundImage: `url('/assets/loginBgImage.jpeg')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'bottom',

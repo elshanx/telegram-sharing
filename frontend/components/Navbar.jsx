@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import Dropdown from './Dropdown';
 
-import moon from '../Styles/assets/illustrations/moon.svg';
-import sun from '../Styles/assets/illustrations/sun.svg';
+import { useTheme } from '../src/providers/DarkModeProvider';
 
-import { useTheme } from '../Providers/DarkModeProvider';
-
-import Auth from '../Helpers/Auth';
+import Auth from '../src/helpers/Auth';
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -131,8 +128,16 @@ const Navbar = () => {
           className='select-none mr-4 py-2.5 px-2 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium cursor-pointer shadow-sm'
         >
           <img
-            src={theme === 'dark' ? moon : sun}
-            alt={theme === 'dark' ? moon : sun}
+            src={
+              theme === 'dark'
+                ? '/assets/illustrations/moon.svg'
+                : '/assets/illustrations/sun.svg'
+            }
+            alt={
+              theme === 'dark'
+                ? '/assets/illustrations/moon.svg'
+                : '/assets/illustrations/sun.svg'
+            }
           />
         </div>
       </ul>

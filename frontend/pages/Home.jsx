@@ -1,7 +1,7 @@
-import Navbar from '../Components/Navbar';
-import Header from '../Components/Header';
-import GroupList from '../Components/GroupList';
-import Footer from '../Components/Footer';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import GroupList from '../components/GroupList';
+import Footer from '../components/Footer';
 
 const Home = () => (
   <div className='w-full dark:bg-primary bg-gray-400 dark:text-light'>

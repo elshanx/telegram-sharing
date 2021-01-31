@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+const isServer = typeof window === 'undefined';
+
 const Auth = () => {
   const url = 'http://localhost:3000';
-  const isLoggedIn = localStorage.getItem('token') ? true : false;
 
-  const [authenticated, setAuthenticated] = useState(isLoggedIn);
+  if (!isServer) {
+    const isLoggedIn = localStorage.getItem('token') ? true : false;
+  }
+
+  const [authenticated, setAuthenticated] = useState(false);
 
   const setToken = (token) => localStorage.setItem('token', token);
 

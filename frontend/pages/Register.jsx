@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'next/link';
 
-import backgroundVideo from '../Styles/assets/charles-parker.mp4';
+const isServer = typeof window === 'undefined';
 
-import { useAuth } from '../Providers/AuthContext';
+import { useAuth } from '../src/providers/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { success, token } = await register(formData);
-      localStorage.setItem('token', token);
+      if (!isServer) localStorage.setItem('token', token);
       success && history.push('/dashboard');
     } catch (error) {
       console.log(error);
@@ -49,7 +49,7 @@ const Register = () => {
             className='max-w-screen-sm w-64 max-h-full object-fill'
             // muted autoPlay loop
           >
-            <source type='video/mp4' src={backgroundVideo} />
+            <source type='video/mp4' src='/assets/charles-parker.mp4' />
           </video>
         </div>
 

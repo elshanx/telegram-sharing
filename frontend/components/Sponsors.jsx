@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import './index.scss';
+import Link from 'next/link';
 
 const Sponsors = () => {
   return (

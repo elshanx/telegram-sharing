@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import Link from 'next/link';
 
-import bgImage from '../Styles/assets/signin.png';
-
-import { useAuth } from '../Providers/AuthContext';
-import Auth from '../Helpers/Auth';
+import { useAuth } from '../src/providers/AuthContext';
+import Auth from '../src/helpers/Auth';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
@@ -74,7 +72,7 @@ const LoginComponent = () => {
         </p>
       </form>
       <div>
-        <img src={bgImage} alt='' />
+        <img src='/assets/signin.png' alt='' />
       </div>
     </div>
   );

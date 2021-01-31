@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion';
 
-import bgSvg from '../Styles/assets/illustrations/vector.svg';
-import blob from '../Styles/assets/illustrations/blob.svg';
-
 const Header = () => {
   return (
     <motion.div
@@ -12,12 +9,12 @@ const Header = () => {
       transition={{ delay: 0.3 }}
     >
       <div className='flex-1 select-none pointer-events-none'>
-        <img src={bgSvg} alt='vector' />
+        <img src='/assets/illustrations/vector.svg' alt='vector' />
       </div>
       <motion.div
         className='flex-1 font-medium'
         style={{
-          backgroundImage: `url(${blob})`,
+          backgroundImage: `url('/assets/illustrations/blob.svg')`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
         }}
