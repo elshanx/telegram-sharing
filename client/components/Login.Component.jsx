@@ -12,14 +12,13 @@ const LoginComponent = () => {
   const { login } = Auth();
 
   const router = useRouter();
-  console.log(router);
 
   const signIn = async (e) => {
     e.preventDefault();
     try {
       const { success, token } = await login(email, password);
       // setUser({ token });
-      success && history.push('/');
+      success && router.push('/');
     } catch (error) {
       console.error({ error });
     }

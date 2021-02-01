@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const isServer = typeof window === 'undefined';
 
@@ -17,7 +18,7 @@ const Register = () => {
   console.log({ isServer });
 
   // const { register, user, setUser } = useAuth();
-  // const history = useHistory();
+  const router = useRouter();
 
   const onInputChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +28,7 @@ const Register = () => {
     try {
       // const { success, token } = await register(formData);
       if (!isServer) localStorage.setItem('token', token);
-      success && history.push('/dashboard');
+      success && useRouter.push('/dashboard');
     } catch (error) {
       console.log(error);
       // TODO: display error

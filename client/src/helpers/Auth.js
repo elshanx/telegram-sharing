@@ -18,7 +18,7 @@ const Auth = () => {
 
   const login = async (email, password) => {
     try {
-      const { data } = await axios.post(`${url}/api/users/login`, {
+      const { data } = await axios.post(` `, {
         email,
         password,
       });
