@@ -7,12 +7,11 @@ export const useAuth = () => useContext(AuthContext);
 const AuthProvider = ({ children }) => {
   const token = localStorage.getItem('token') || undefined;
 
-  const [user, setUser] = useState({ token });
-
-  const value = { user, setUser };
+  const [user] = useState({ user: null });
+  // TODO: fix this
 
   return (
-    <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={user}>{children}</AuthContext.Provider>
   );
 };
 
