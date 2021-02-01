@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { useAuth } from '../src/providers/AuthContext';
 import Auth from '../src/helpers/Auth';
@@ -7,16 +8,17 @@ import Auth from '../src/helpers/Auth';
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { user, setUser } = useAuth();
+  // const [user, setUser] = useAuth();
   const { login } = Auth();
 
-  const history = useHistory();
+  const router = useRouter();
+  console.log(router);
 
   const signIn = async (e) => {
     e.preventDefault();
     try {
       const { success, token } = await login(email, password);
-      setUser({ token });
+      // setUser({ token });
       success && history.push('/');
     } catch (error) {
       console.error({ error });

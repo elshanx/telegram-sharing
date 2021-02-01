@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const isServer = typeof window === 'undefined';
 
-import { useAuth } from '../src/providers/AuthContext';
+import { useAuth } from '../../src/providers/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +14,10 @@ const Register = () => {
     password2: '',
   });
 
-  const { register, user, setUser } = useAuth();
-  const history = useHistory();
+  console.log({ isServer });
+
+  // const { register, user, setUser } = useAuth();
+  // const history = useHistory();
 
   const onInputChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,7 +25,7 @@ const Register = () => {
   const registerUser = async (e) => {
     e.preventDefault();
     try {
-      const { success, token } = await register(formData);
+      // const { success, token } = await register(formData);
       if (!isServer) localStorage.setItem('token', token);
       success && history.push('/dashboard');
     } catch (error) {

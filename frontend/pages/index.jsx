@@ -1,28 +1,17 @@
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import Login from './Login';
-import Register from './Register';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import GroupList from '../components/GroupList';
+import Footer from '../components/Footer';
 
-// import Dashboard from '../components/Dashboard';
-// import AuthProvider from './providers/AuthContext';
-// import DarkModeProvider from './providers/DarkModeProvider';
+const Home = () => (
+  <div className='w-full dark:bg-primary bg-gray-400 dark:text-light'>
+    <div className='container m-auto'>
+      <Navbar />
+      <Header />
+      <GroupList />
+      <Footer />
+    </div>
+  </div>
+);
 
-const App = () => {
-  return (
-    // <DarkModeProvider>
-    // <AuthProvider>
-    <>
-      <Home />
-      <About />
-      <Contact />
-      <Login />
-      <Register />
-      {/* <Dashboard /> */}
-    </>
-    // </AuthProvider>
-    // </DarkModeProvider>
-  );
-};
-
-export default App;
+export default Home;
