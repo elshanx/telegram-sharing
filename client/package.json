@@ -9,7 +9,9 @@
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "framer-motion": "^3.2.2-rc.1",
+    "jsonwebtoken": "^8.5.1",
     "next": "^10.0.6",
+    "next-auth": "^3.2.0",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -17,7 +19,7 @@
     "tailwindcss": "^2.0.2"
   },
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
