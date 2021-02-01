@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'next/link';
+import Link from 'next/link';
 
 const isServer = typeof window === 'undefined';
 
@@ -38,7 +38,7 @@ const Register = () => {
         <p className='absolute top-0 w-10/12 pt-6'>
           <Link
             className='py-1 px-2 dark:bg-gray-600 dark:text-white hover:bg-mainhover rounded-sm transition-all font-medium'
-            to='/'
+            href='/#'
           >
             Home
           </Link>
@@ -109,7 +109,7 @@ const Register = () => {
               Already have an account?{' '}
               <Link
                 className='hover:text-altprimary transition'
-                to='/login'
+                href='/login'
               >
                 Log in
               </Link>

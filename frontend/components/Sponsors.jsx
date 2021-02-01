@@ -18,7 +18,7 @@ const Sponsors = () => {
           corporis perspiciatis dolorum nobis sed in nulla maxime nemo quo,
           impedit ab deserunt similique.
         </p>
-        <Link to='#' className='blog-post__cta'>
+        <Link href='/#' className='blog-post__cta'>
           read more
         </Link>
       </div>

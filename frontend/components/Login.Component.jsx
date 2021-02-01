@@ -28,7 +28,7 @@ const LoginComponent = () => {
       <p>
         <Link
           className='py-1 px-2 dark:bg-altdark dark:text-white hover:bg-mainhover rounded-sm transition-all font-medium'
-          to='/'
+          href='/#'
         >
           Home
         </Link>
@@ -65,7 +65,7 @@ const LoginComponent = () => {
           Don't have an account?{' '}
           <Link
             className='dark:hover:text-altprimary hover:text-white hover:opacity-100 transition'
-            to='/register'
+            href='/register'
           >
             Sign up
           </Link>

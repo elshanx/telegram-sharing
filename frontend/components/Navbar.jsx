@@ -26,19 +26,19 @@ const Navbar = () => {
     >
       <ul className='flex items-center justify-center list-none'>
         <p className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium'>
-          <Link to='/'>Home</Link>
+          <Link href='/'>Home</Link>
         </p>
         <li className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium'>
-          <Link to='/about'>About us</Link>
+          <Link href='/about'>About us</Link>
         </li>
         <li className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium'>
-          <Link to='/contact'>Contact us</Link>
+          <Link href='/contact'>Contact us</Link>
         </li>
         <Dropdown title='Categories' />
       </ul>
       <ul className='flex items-center justify-center list-none'>
         <p className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium shadow-sm'>
-          <Link to='/new/group'>Add new</Link>
+          <Link href='/new/group'>Add new</Link>
         </p>
         {authenticated ? (
           <>
@@ -87,21 +87,21 @@ const Navbar = () => {
                   aria-labelledby='user-menu'
                 >
                   <Link
-                    to='/user/profile'
+                    href='/user/profile'
                     className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
                     role='menuitem'
                   >
                     Your Profile
                   </Link>
                   <Link
-                    to='/user/settings'
+                    href='/user/settings'
                     className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
                     role='menuitem'
                   >
                     Settings
                   </Link>
                   <Link
-                    to='/'
+                    href='/#'
                     className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'
                     role='menuitem'
                     onClick={() => logout()}
@@ -115,10 +115,10 @@ const Navbar = () => {
         ) : (
           <>
             <p className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium shadow-sm'>
-              <Link to='/login'>Login</Link>
+              <Link href='/login'>Login</Link>
             </p>
             <p className='mr-4 py-2 px-4 rounded-sm bg-altdark dark:text-white hover:bg-mainhover transition-all font-medium shadow-sm'>
-              <Link to='/register'>Register</Link>
+              <Link href='/register'>Register</Link>
             </p>
           </>
         )}

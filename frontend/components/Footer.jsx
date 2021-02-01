@@ -11,17 +11,17 @@ const Footer = () => {
                 Footer header 1
               </span>
               <span className='my-2'>
-                <Link to='#' className='text-md'>
+                <Link href='/#' className='text-md'>
                   link 1
                 </Link>
               </span>
               <span className='my-2'>
-                <Link to='#' className='text-md'>
+                <Link href='/#' className='text-md'>
                   link 1
                 </Link>
               </span>
               <span className='my-2'>
-                <Link to='#' className='text-md'>
+                <Link href='/#' className='text-md'>
                   link 1
                 </Link>
               </span>
@@ -31,17 +31,17 @@ const Footer = () => {
                 Footer header 2
               </span>
               <span className='my-2'>
-                <Link to='#' className='text-md'>
+                <Link href='/#' className='text-md'>
                   link 1
                 </Link>
               </span>
               <span className='my-2'>
-                <Link to='#' className=' text-md'>
+                <Link href='/#' className=' text-md'>
                   link 1
                 </Link>
               </span>
               <span className='my-2'>
-                <Link to='#' className='text-md'>
+                <Link href='/#' className='text-md'>
                   link 1
                 </Link>
               </span>
@@ -51,17 +51,17 @@ const Footer = () => {
                 Footer header 3
               </span>
               <span className='my-2'>
-                <Link to='#' className=' text-md'>
+                <Link href='/#' className=' text-md'>
                   link 1
                 </Link>
               </span>
               <span className='my-2'>
-                <Link to='#' className=' text-md'>
+                <Link href='/#' className=' text-md'>
                   link 1
                 </Link>
               </span>
               <span className='my-2'>
-                <Link to='#' className=' text-md'>
+                <Link href='/#' className=' text-md'>
                   link 1
                 </Link>
               </span>
@@ -77,7 +77,7 @@ const Footer = () => {
               <Link
                 target='_blank'
                 rel='noreferrer noopener'
-                to='https://www.linkedin.com/in/elshanx/'
+                href='https://www.linkedin.com/in/elshanx/'
               >
                 <span className='transition-all hover:text-altprimary'>
                   Elshan Akbarov

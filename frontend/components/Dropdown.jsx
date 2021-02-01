@@ -60,28 +60,28 @@ const Dropdown = ({ title }) => {
           aria-labelledby='options-menu'
         >
           <Link
-            to='#'
+            href='/#'
             className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-300'
             role='menuitem'
           >
             Some Group
           </Link>
           <Link
-            to='#'
+            href='/#'
             className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-300'
             role='menuitem'
           >
             Some Channel
           </Link>
           <Link
-            to='#'
+            href='/#'
             className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-300'
             role='menuitem'
           >
             Some
           </Link>
           <Link
-            to='#'
+            href='/#'
             className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-300'
             role='menuitem'
           >

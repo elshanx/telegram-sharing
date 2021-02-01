@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Contact = () => (
   <div>
-    <Link to='/'>
+    <Link href='/#'>
       <a>home</a>
     </Link>
     <h2>Contact Us!</h2>
