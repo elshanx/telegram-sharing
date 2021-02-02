@@ -16,15 +16,15 @@ const Auth = () => {
 
   const deleteToken = () => localStorage.removeItem('token');
 
-  const login = async (email, password) => {
+  const login = async (body) => {
     try {
-      const { data } = await axios.post(` `, {
-        email,
-        password,
-      });
+      const {
+        data: { token },
+      } = await axios.post('/api/login', body);
+      console.log({ token });
       setToken(data.token);
       setAuthenticated(true);
-      return data;
+      return token;
     } catch (err) {
       console.error(err);
     }

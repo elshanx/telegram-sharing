@@ -10,6 +10,7 @@
     "dotenv": "^8.2.0",
     "framer-motion": "^3.2.2-rc.1",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.14",
     "next": "^10.0.6",
     "next-auth": "^3.2.0",
     "postcss": "^8.2.4",
