@@ -17,10 +17,6 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'baseui'],
-  rules: {
-    'baseui/deprecated-theme-api': 'warn',
-    'baseui/deprecated-component-api': 'warn',
-    'baseui/no-deep-imports': 'warn',
-  },
+  plugins: ['react', '@typescript-eslint'],
+  rules: {},
 };
