@@ -42,17 +42,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href='login'>
+              <Link href='/login'>
                 <a>Login</a>
               </Link>
             </li>
             <li>
-              <Link href='register'>
+              <Link href='/register'>
                 <a>Sign up</a>
               </Link>
             </li>
             <li>
-              <Link href='new'>
+              <Link href='/new'>
                 <a>add channel</a>
               </Link>
             </li>
