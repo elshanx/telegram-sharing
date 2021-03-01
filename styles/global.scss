@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Open+Sans&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font: {
+    family: 'Lexend Deca', 'Open sans', sans-serif;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
