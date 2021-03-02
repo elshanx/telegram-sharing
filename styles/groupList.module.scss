@@ -1,0 +1,42 @@
+.grid {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: auto 350px;
+  grid-gap: 40px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heading {
+  text-align: center;
+}
+
+.side {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tag {
+  background-color: #f2f2f2;
+  width: 270px;
+  border-radius: 2px;
+  text-indent: 10px;
+  position: relative;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border: 1px solid #000;
+}

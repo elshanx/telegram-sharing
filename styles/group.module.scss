@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > * {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4.3rem;
+
+  & > * {
+    margin: 0 1rem 7rem 0;
+  }
+}
+
+.card {
+  border-radius: 3px;
+  overflow: hidden;
+  width: 310px;
+  height: 160px;
+  background-color: rgba(128, 128, 128, 0.301);
+  box-shadow: 8px 14px 38px rgb(39 44 49 / 6%),
+    1px 3px 8px rgb(39 44 49 / 3%);
+}
