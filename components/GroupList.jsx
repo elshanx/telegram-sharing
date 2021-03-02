@@ -1,40 +1,33 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { grid, heading, side, tag } from 'styles/groupList.module.scss';
 
-import Group from './Group';
-
-// import { fetchGroups } from '../API';
+import Group from 'components/Group';
+import Skeleton from 'components/Skeleton';
+import { useState } from 'react';
 
 const GroupList = () => {
-  const [groups, setGroups] = useState([]);
-
-  // useEffect(() => (async () => setGroups(await fetchGroups()))(), []);
+  const [data] = useState({
+    key1: 'value',
+  });
 
   return (
-    <section>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h2 className='text-5xl text-center my-16 font-medium text-transparent bg-gradient-to-r from-pink-500 via-purple-800 to-red-200 bg-clip-text'>
-          Featured Channels, Groups, and Bots
-        </h2>
-      </motion.div>
-      <div className='container flex flex-wrap justify-around'>
-        {groups && groups?.map((g) => <Group key={g.id} {...g} />)}
+    <main className={grid}>
+      <div>
+        <div className={tag}>
+          <h3>Featured groups & channels</h3>
+        </div>
+        <div>
+          {data &&
+            Object.entries(data)?.map((g) => <Group key={g.id} {...g} />)}
+        </div>
       </div>
-    </section>
+      <div>
+        <h2 className={heading}>right side stuff..</h2>
+        <div className={side}>
+          <Skeleton side />
+        </div>
+      </div>
+    </main>
   );
 };
-
-export async function getServerSideProps() {
-  // import axios from 'axios';
-  // export const url = 'http://localhost:3000';
-  // export const fetchGroups = async () => {
-  //   try {
-  //     const { data: groups } = await axios.get(url);
-  //     return groups;
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-}
 
 export default GroupList;
