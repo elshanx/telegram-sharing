@@ -6,7 +6,7 @@ import {
   input,
   outerContainer,
   ul,
-} from 'styles/Navbar.module.scss';
+} from 'styles/navbar.module.scss';
 
 import Link from 'next/link';
 
