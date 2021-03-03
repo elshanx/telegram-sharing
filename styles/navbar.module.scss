@@ -80,6 +80,14 @@
     min-width: 70px;
     user-select: none;
     font-family: inherit;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
   }
 }
 
