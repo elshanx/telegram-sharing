@@ -8,9 +8,9 @@ import {
   input,
   left,
   right,
+  switchPage,
   toHome,
-  toRegister,
-} from 'styles/login.module.scss';
+} from 'styles/loginAndReg.module.scss';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -19,8 +19,6 @@ import { useState } from 'react';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [user, setUser] = useAuth();
-  // const { login } = Auth();
 
   const router = useRouter();
 
@@ -38,7 +36,7 @@ const Login = () => {
     <div className={container}>
       <div className={left}>
         <p className={toHome}>
-          <Link href='/#'>Home</Link>
+          <Link href='/'>Home</Link>
         </p>
         <div className={`${flex} ${fullHeight}`}>
           <h1>some cool text</h1>
@@ -48,7 +46,7 @@ const Login = () => {
         <div className={formContainer}>
           <form className={form} onSubmit={signIn}>
             <div>
-              <h2>Log in</h2>
+              <h2>log in</h2>
             </div>
             <input
               className={input}
@@ -71,7 +69,7 @@ const Login = () => {
             <button className={btn} type='submit'>
               Log in
             </button>
-            <div className={toRegister}>
+            <div className={switchPage}>
               Don't have an account?
               <Link href='/register'>
                 <a> Sign up</a>

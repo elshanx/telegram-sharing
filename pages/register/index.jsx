@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import {
+  btn,
+  container,
+  flex,
+  form,
+  formContainer,
+  fullHeight,
+  input,
+  left,
+  right,
+  switchPage,
+  toHome,
+} from 'styles/loginAndReg.module.scss';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const isServer = typeof window === 'undefined';
-
-import { useAuth } from '../../src/providers/AuthContext';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +33,7 @@ const Register = () => {
   const router = useRouter();
 
   const onInputChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: [e.target.value] });
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -34,89 +46,72 @@ const Register = () => {
       // TODO: display error
     }
   };
-  // bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-900
+
   return (
-    <div className='flex justify-center items-center min-h-screen h-64 bg-purple-800'>
-      <div className='flex items-center justify-center rounded shadow overflow-hidden h-3/5'>
-        <p className='absolute top-0 w-10/12 pt-6'>
-          <Link
-            className='py-1 px-2 dark:bg-gray-600 dark:text-white hover:bg-mainhover rounded-sm transition-all font-medium'
-            href='/#'
-          >
-            Home
-          </Link>
+    <div className={container}>
+      <div className={left}>
+        <p className={toHome}>
+          <Link href='/'>Home</Link>
         </p>
-
-        <div className='h-full'>
-          <video
-            className='max-w-screen-sm w-64 max-h-full object-fill'
-            // muted autoPlay loop
-          >
-            <source type='video/mp4' src='/assets/charles-parker.mp4' />
-          </video>
+        <div className={`${flex} ${fullHeight}`}>
+          <h1>some cool text</h1>
         </div>
-
-        <div className='p-8 dark:bg-altdark h-full bg-gray-600'>
-          <form
-            className='flex flex-col justify-center items-center h-full'
-            onSubmit={registerUser}
-          >
-            <h2 className='text-shadow my-4 text-3xl'>Sign Up</h2>
+      </div>
+      <div className={right}>
+        <div className={formContainer}>
+          <form className={form}>
+            <div>
+              <h2>register</h2>
+            </div>
             <input
-              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
+              className={input}
               name='name'
-              onChange={onInputChange}
-              value={formData.name}
+              // onChange={(e) => setEmail(e.target.value)}
               type='text'
-              placeholder='First name'
+              aria-label='name input'
+              placeholder='Your name*'
             />
             <input
-              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
+              className={input}
               name='lastname'
-              onChange={onInputChange}
-              value={formData.lastname}
+              // onChange={(e) => setPassword(e.target.value)}
               type='text'
-              placeholder='Last name'
+              aria-label='lastname input'
+              placeholder='Your lastname*'
             />
             <input
-              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
+              className={input}
               name='email'
-              onChange={onInputChange}
-              value={formData.email}
-              type='text'
-              placeholder='Your email'
+              // onChange={(e) => setPassword(e.target.value)}
+              type='email'
+              aria-label='email input'
+              placeholder='Your email*'
             />
             <input
-              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
+              className={input}
               name='password'
-              onChange={onInputChange}
-              value={formData.password}
+              // onChange={(e) => setPassword(e.target.value)}
               type='password'
-              placeholder='Create password'
+              aria-label='password input'
+              placeholder='Your password*'
             />
             <input
-              className='w-52 font-medium bg-gray-300 text-altdark border-none outline-none py-1 px-2 rounded-sm mb-2 text-sm focus:bg-white transition-all duration-500'
+              className={input}
               name='password2'
-              onChange={onInputChange}
-              value={formData.password2}
+              // onChange={(e) => setPassword(e.target.value)}
               type='password'
-              placeholder='Confirm password'
+              aria-label='password confirmation input'
+              placeholder='Confirm your password*'
             />
-            <button
-              className='shadow mt-4 mb-4 py-1 rounded-sm transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border-none text-white hover:bg-altdark hover:text-white dark:hover:bg-altprimary font-medium ring-1 ring-white md:ring-white w-40'
-              type='submit'
-            >
-              Register
+            <button className={btn} type='submit'>
+              submit form
             </button>
-            <p className='text-xs dark:opacity-50 opacity-75'>
-              Already have an account?{' '}
-              <Link
-                className='hover:text-altprimary transition'
-                href='/login'
-              >
-                Log in
+            <div className={switchPage}>
+              Don't have an account?
+              <Link href='/login'>
+                <a> log in</a>
               </Link>
-            </p>
+            </div>
           </form>
         </div>
       </div>
