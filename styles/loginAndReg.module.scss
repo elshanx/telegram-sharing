@@ -78,6 +78,7 @@
     cursor: pointer;
     height: 30px;
     min-width: 70px;
+    width: 100px;
     user-select: none;
     font-family: inherit;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -100,7 +101,7 @@
   border-radius: 2px;
 }
 
-.toRegister {
+.switchPage {
   font-size: 10px;
   opacity: 0.6;
 }
@@ -120,5 +121,16 @@
   &:focus {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
+  }
+}
+
+.cc {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  transition: 1.2s all;
+
+  &:hover {
+    transform: translate(50%, 0);
   }
 }
