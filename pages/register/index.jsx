@@ -27,13 +27,11 @@ const Register = () => {
     password2: '',
   });
 
-  console.log({ isServer });
-
   // const { register, user, setUser } = useAuth();
   const router = useRouter();
 
   const onInputChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: [e.target.value] });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const registerUser = async (e) => {
     e.preventDefault();
@@ -59,14 +57,17 @@ const Register = () => {
       </div>
       <div className={right}>
         <div className={formContainer}>
-          <form className={form}>
+          <form
+            onSubmit={registerUser}
+            onChange={onInputChange}
+            className={form}
+          >
             <div>
               <h2>register</h2>
             </div>
             <input
               className={input}
               name='name'
-              // onChange={(e) => setEmail(e.target.value)}
               type='text'
               aria-label='name input'
               placeholder='Your name*'
@@ -74,7 +75,6 @@ const Register = () => {
             <input
               className={input}
               name='lastname'
-              // onChange={(e) => setPassword(e.target.value)}
               type='text'
               aria-label='lastname input'
               placeholder='Your lastname*'
@@ -82,7 +82,6 @@ const Register = () => {
             <input
               className={input}
               name='email'
-              // onChange={(e) => setPassword(e.target.value)}
               type='email'
               aria-label='email input'
               placeholder='Your email*'
@@ -90,7 +89,6 @@ const Register = () => {
             <input
               className={input}
               name='password'
-              // onChange={(e) => setPassword(e.target.value)}
               type='password'
               aria-label='password input'
               placeholder='Your password*'
@@ -98,7 +96,6 @@ const Register = () => {
             <input
               className={input}
               name='password2'
-              // onChange={(e) => setPassword(e.target.value)}
               type='password'
               aria-label='password confirmation input'
               placeholder='Confirm your password*'
